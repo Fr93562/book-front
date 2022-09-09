@@ -1,48 +1,40 @@
 import server from '../configs/server';
 
-function api(method, url, action) {
-    const params = {
-        method: method,
-        headers: { 'Accept': 'application/json' },
-        mode: 'cors',
-        cache: 'default'
-    };
+class Request {
+    api(method, url, action) {
+        const params = {
+            method: method,
+            headers: { 'Accept': 'application/json' },
+            mode: 'cors',
+            cache: 'default'
+        };
+    
+        fetch(`${server.url}${url}`, params)
+            .then(raw => raw.json().then(data => (
+                {
+                    status: raw.status,
+                    data: data 
+                })))
+            .then(response => {
+                action(response);
+            });
+    }
 
-    fetch(`${server.url}${url}`, params).then(function (response) {
-        const state = {
-            status: 'load',
-            type: 200,
-            data: response.body,
-        }
+    get(url, action) {
+        this.api('GET', url, action);
+    }
 
-        console.log(response);
+    post(url, action) {
+        this.api('POST', url, action);
+    }
 
-        action(state);
-    })
+    put(url, action) {
+        this.api('PUT', url, action);
+    }
+
+    remove(url, action) {
+        this.api('DELETE', url, action);
+    }
 }
 
-
-function get(url, action) {
-    api('GET', url, action);
-}
-
-function post(url, action) {
-    api('POST', url, action);
-}
-
-function put(url, action) {
-    api('PUT', url, action);
-}
-
-function remove(url, action) {
-    api('DELETE', url, action);
-}
-
-const request =  {
-    get,
-    post,
-    put,
-    delete: remove,
-};
-
-export default request;
+export default new Request();
