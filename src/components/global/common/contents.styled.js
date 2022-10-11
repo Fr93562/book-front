@@ -3,6 +3,26 @@ import theme from '../theme';
 
 // header
 
+// basics
+
+export const Span = styled.span`
+
+`;
+
+export const Paragraph = styled.p`
+
+`;
+
+export const Highlight = styled.em`
+
+`;
+
+export const Important = styled.strong`
+    font-family: ${theme.fonts.primary};
+    font-size: ${theme.sizes.m};
+    color: ${theme.colors.red40};
+`;
+
 export const TextHeader = styled.strong`
     font-family: ${theme.fonts.primary};
     font-size: ${theme.sizes.m};
