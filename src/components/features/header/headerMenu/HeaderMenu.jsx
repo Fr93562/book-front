@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import paths from '../../../../configs/paths';
-import theme from '../../theme';
-import Icon from '../../common/Icon';
-import { Navigation, List, ListItem, Sublist, SublistItem } from '../../common/container.styled';
-import { ButtonNavigation } from '../../common/contents.styled';
+import theme from '../../../theme';
+import Icon from '../../../global/common/Icon';
+import { Navigation, List, ListItem, Sublist, SublistItem } from '../../../global/common/container.styled';
+import { ButtonNavigation } from '../../../global/common/contents.styled';
 
-function PublicNavigation() {
+function HeaderMenu() {
     const [open, setOpen] = useState(false);
 
     const action = () => {
@@ -77,4 +77,4 @@ function PublicNavigation() {
     );
 }
 
-export default PublicNavigation;
+export default HeaderMenu;

@@ -1,6 +1,5 @@
-import { PureComponent } from 'react';
-import ActionPublic from './action/ActionPublic';
-import Page from './pages/Router';
+import React, { PureComponent } from 'react';
+import ActionPublic from './actions/ActionPublic';
 
 class Store extends PureComponent {
     constructor() {
@@ -38,11 +37,15 @@ class Store extends PureComponent {
     }
 
     render() {
+        const { children } = this.props;
         const store = this.state;
+
         console.log('my states', this.state);
 
         return (
-            <Page store={store} />
+            <>
+                {React.cloneElement(children, {store})}
+            </>
         );
     }
 }

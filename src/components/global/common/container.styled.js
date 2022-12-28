@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme from '../theme';
+import theme from '../../theme';
 
 // Basics semantics
 
@@ -36,22 +36,6 @@ export const Navigation = styled.nav`
 
 export const Main = styled.main`
     min-height: 90vh;
-`;
-
-export const Footer = styled.footer`
-    width: 100%;
-    height: 60px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-
-    background-color: ${theme.colors.grey100};
-
-    strong {
-        margin: 0px ${theme.margins.m} 0px ${theme.margins.m};
-    }
 `;
 
 // Common semantics

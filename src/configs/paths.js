@@ -7,7 +7,7 @@ const paths = {
         path: '/projets',
         name: 'Projets',
     },
-    diy: {
+    articles: {
         path: '/diy',
         name: 'Do it yourself',
     },

@@ -1,11 +1,11 @@
 import { PureComponent } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import paths from '../configs/paths';
-import Home from './public/Home';
-import Projects from './public/Projects';
-import Sides from './public/Sides';
-import Contact from './public/Contact';
-import Error from './public/Error';
+import Home from './public/home/Home';
+import Projects from './public/project/Projects';
+import Sides from './public/side/Sides';
+import Contact from './public/contact/Contact';
+import Error from './public/error/Error';
 
 class Page extends PureComponent {
     isAuth() {
@@ -30,7 +30,7 @@ class Page extends PureComponent {
 
                     <Route path={paths.home.path} element={<Home store={store} />} />
                     <Route path={paths.projects.path} element={<Projects store={store} />} />
-                    <Route path={paths.diy.path} element={<Sides store={store} />} />
+                    <Route path={paths.articles.path} element={<Sides store={store} />} />
                     <Route path={paths.contact.path} element={<Contact store={store} />} />
                     <Route path='"/*' element={<Error store={store} />} />
 

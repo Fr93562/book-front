@@ -1,6 +1,6 @@
-import request from "../utils/Request";
+import request from "../../utils/Request";
 
-class PrivateAction {
+class ActionPublic {
     getUser(store) {
         const updateState = (data) => { store.setState({ users: data })};
         request.get('/user', updateState);
@@ -17,4 +17,4 @@ class PrivateAction {
     }
 }
 
-export default new PrivateAction();
+export default new ActionPublic();
